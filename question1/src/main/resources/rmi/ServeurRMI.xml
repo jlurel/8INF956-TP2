@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="compteServeur007" class="compte.Implementation_du_Compte">
+        <constructor-arg value="007"/>
+        <constructor-arg value="Xiao Zhi"/>
+        <constructor-arg value="(418)545-5011"/>
+        <constructor-arg value="via rmi"/>
+    </bean>
+    <bean class="org.springframework.remoting.rmi.RmiServiceExporter">
+        <property name="service" ref="compteServeur007" />
+        <property name="serviceName" value="Compt-007" />
+        <property name="serviceInterface" value="compte.Compte" />
+        <property name="replaceExistingBinding" value="true" />
+        <property name="registryPort" value="1099" />
+    </bean>
+</beans>
