@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="fr">
 <head>
     <title>Getting Started: Serving Web Content</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -20,26 +20,24 @@
                 <li class="list-group-item"><p th:text="'Solde du compte : ' + ${solde}">Solde</p></li>
             </ul>
         </div>
-        <div class="col-md-6">
-            <form method="POST" action="#" th:action="@{/depot}" th:object="${guichet}">
-                <div class="form-group">
-                    <label th:for="montantDepot">Montant du depot</label>
+        <div class="col-md-6 container">
+            <form method="POST" action="#" th:action="@{/operation}" th:object="${guichet}">
+                <div class="form-group col-md-6 mx-auto text-center">
+                    <label th:for="montant">Montant du depot</label>
                     <input type="number" class="form-control"
-                           id="montantDepot" name="montantDepot"
+                           id="montant" name="montant"
                             min="10" max="10000" step="10"/>
                 </div>
-                <button type="submit" class="btn btn-primary">Depot</button>
+                <div class="row col-md-6 mx-auto">
+                    <button type="submit" class="btn btn-primary mx-auto"
+                            name="action" th:value="depot">Depot</button>
+
+                    <button type="submit" class="btn btn-primary mx-auto"
+                            name="action" th:value="retrait">Retrait</button>
+                </div>
             </form>
             <hr>
-            <form method="POST" action="#" th:action="@{/retrait}" th:object="${guichet}">
-                <div class="form-group">
-                    <label th:for="montantRetrait">Montant du retrait</label>
-                    <input type="number" class="form-control"
-                           id="montantRetrait" name="montantRetrait"
-                           min="10" max="10000" step="10"/>
-                </div>
-                <button type="submit" class="btn btn-primary">Retrait</button>
-            </form>
+            <p class="text-center" th:text="${message}">Message</p>
         </div>
     </div>
     <hr>

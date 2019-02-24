@@ -20,7 +20,7 @@ public class IndexController {
     }
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public ModelAndView index(ModelMap m) {
+    public ModelAndView index() {
         ModelAndView view = new ModelAndView("index", "command", guichet);
         view.addObject("nom", guichet.getNom());
         view.addObject("numero", guichet.getNumero());
@@ -31,26 +31,31 @@ public class IndexController {
         return view;
     }
 
-    @RequestMapping(value = "/depot", method = RequestMethod.POST)
-    public String depot(Guichet leGuichet, ModelMap modelMap) {
-        guichet.deposer(leGuichet.getMontantDepot());
-        modelMap.addAttribute("nom", guichet.getNom());
-        modelMap.addAttribute("numero", guichet.getNumero());
-        modelMap.addAttribute("telephone", guichet.getNumeroTel());
-        modelMap.addAttribute("service", guichet.getService());
-        modelMap.addAttribute("solde", guichet.getSolde());
-        modelMap.addAttribute("message", "");
-        return "redirect:/";
-    }
-
-    @RequestMapping(value = "/retrait", method = RequestMethod.POST)
-    public String retrait(Guichet leGuichet, ModelMap modelMap) {
-        modelMap.addAttribute("message", guichet.retirer(leGuichet.getMontantRetrait()));
-        modelMap.addAttribute("nom", guichet.getNom());
-        modelMap.addAttribute("numero", guichet.getNumero());
-        modelMap.addAttribute("telephone", guichet.getNumeroTel());
-        modelMap.addAttribute("service", guichet.getService());
-        modelMap.addAttribute("solde", guichet.getSolde());
-        return "redirect:/";
+    @RequestMapping(value = "/operation", method = RequestMethod.POST)
+    public ModelAndView effectuerOperation(@ModelAttribute Guichet leGuichet,
+                                     @RequestParam(value = "action") String action) {
+        ModelAndView view = new ModelAndView("index", "command", guichet);
+        switch (action) {
+            case "depot" :
+                guichet.deposer(leGuichet.getMontant());
+                view.addObject("nom", guichet.getNom());
+                view.addObject("numero", guichet.getNumero());
+                view.addObject("telephone", guichet.getNumeroTel());
+                view.addObject("service", guichet.getService());
+                view.addObject("solde", guichet.getSolde());
+                view.addObject("message", "");
+                break;
+            case "retrait" :
+                view.addObject("message", guichet.retirer(leGuichet.getMontant()));
+                view.addObject("nom", guichet.getNom());
+                view.addObject("numero", guichet.getNumero());
+                view.addObject("telephone", guichet.getNumeroTel());
+                view.addObject("service", guichet.getService());
+                view.addObject("solde", guichet.getSolde());
+                break;
+            default:
+                break;
+        }
+        return view;
     }
 }

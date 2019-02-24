@@ -53,7 +53,7 @@ public class Implementation_du_Compte implements Compte {
         else
         {
             this.setSolde( this.getSolde() - montant );
-            message = "ok";
+            message = "Retrait effectué !";
         }
         return message;
     }

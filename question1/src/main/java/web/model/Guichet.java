@@ -4,8 +4,7 @@ import compte.Compte;
 
 public class Guichet {
     private Compte compte;
-    private double montantDepot;
-    private double montantRetrait;
+    private double montant;
 
     public Guichet(Compte compte) {
         this.compte = compte;
@@ -19,20 +18,12 @@ public class Guichet {
         this.compte = compte;
     }
 
-    public double getMontantDepot() {
-        return montantDepot;
+    public double getMontant() {
+        return montant;
     }
 
-    public void setMontantDepot(double montantDepot) {
-        this.montantDepot = montantDepot;
-    }
-
-    public double getMontantRetrait() {
-        return montantRetrait;
-    }
-
-    public void setMontantRetrait(double retrait) {
-        this.montantRetrait = retrait;
+    public void setMontant(double montant) {
+        this.montant = montant;
     }
 
     public String getNumero() {
