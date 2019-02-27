@@ -15,9 +15,10 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.apache.felix</groupId>
-            <artifactId>org.apache.felix.framework</artifactId>
-            <version>6.0.2</version>
+            <groupId>com.katsuo</groupId>
+            <artifactId>dictionary-api</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 
@@ -27,6 +28,7 @@
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
                 <extensions>true</extensions>
+                <version>4.1.0</version>
                 <configuration>
                     <instructions>
                         <Bundle-SymbolicName>${project.groupId}.${project.artifactId}</Bundle-SymbolicName>
@@ -34,6 +36,7 @@
                         <Bundle-Description>Bundle qui implémente un service de dictionnaire pour la langue française</Bundle-Description>
                         <Bundle-Version>${project.version}</Bundle-Version>
                         <Bundle-Activator>french.Activator</Bundle-Activator>
+                        <Embed-Dependency>service;scope=compile</Embed-Dependency>
                     </instructions>
                 </configuration>
             </plugin>

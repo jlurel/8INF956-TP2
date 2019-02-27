@@ -2,6 +2,7 @@ package french;
 
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
+
 import service.DictionaryService;
 
 import java.io.BufferedReader;
@@ -14,13 +15,13 @@ import java.util.Hashtable;
 import java.util.List;
 
 public class Activator implements BundleActivator {
-    public void start(BundleContext context) throws Exception {
+    public void start(BundleContext context) {
         Hashtable<String, String> properties = new Hashtable<String, String>();
         properties.put("Language", "Français");
         context.registerService(DictionaryService.class.getName(), new DictionaryImpl(), properties);
     }
 
-    public void stop(BundleContext context) throws Exception {
+    public void stop(BundleContext context) {
 
     }
 

@@ -11,16 +11,7 @@
 
     <packaging>bundle</packaging>
 
-    <dependencies>
-        <dependency>
-            <groupId>com.katsuo</groupId>
-            <artifactId>dictionary-api</artifactId>
-            <version>1.0-SNAPSHOT</version>
-            <scope>compile</scope>
-        </dependency>
-    </dependencies>
-
-    <artifactId>english-dictionary</artifactId>
+    <artifactId>dictionary-api</artifactId>
 
     <build>
         <plugins>
@@ -32,16 +23,12 @@
                 <configuration>
                     <instructions>
                         <Bundle-SymbolicName>${project.groupId}.${project.artifactId}</Bundle-SymbolicName>
-                        <Bundle-Name>Dictionnaire anglais</Bundle-Name>
-                        <Bundle-Description>Bundle qui implémente un service de dictionnaire pour la langue anglaise</Bundle-Description>
+                        <Bundle-Name>Dictionary Service Interface</Bundle-Name>
                         <Bundle-Version>${project.version}</Bundle-Version>
-                        <Bundle-Activator>english.Activator</Bundle-Activator>
-                        <Embed-Dependency>service;scope=compile</Embed-Dependency>
+                        <Export-Package>service;x-internal:=true</Export-Package>
                     </instructions>
                 </configuration>
             </plugin>
         </plugins>
     </build>
-
-
 </project>

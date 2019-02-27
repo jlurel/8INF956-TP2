@@ -2,6 +2,7 @@ package english;
 
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
+
 import service.DictionaryService;
 
 import java.io.*;
@@ -11,13 +12,13 @@ import java.util.Hashtable;
 import java.util.List;
 
 public class Activator implements BundleActivator {
-    public void start(BundleContext context) throws Exception {
+    public void start(BundleContext context) {
         Hashtable<String, String> properties = new Hashtable<String, String>();
         properties.put("Language", "English");
         context.registerService(DictionaryService.class.getName(), new DictionaryImpl(), properties);
     }
 
-    public void stop(BundleContext context) throws Exception {
+    public void stop(BundleContext context) {
 
     }
 
