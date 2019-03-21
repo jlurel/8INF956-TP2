@@ -47,7 +47,7 @@ public class Guichet_Auto {
         //nom
         JPanel panneauNom = new JPanel( new FlowLayout( FlowLayout.CENTER ) );
         panneauNom.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder()));
-        ImageIcon icon = new ImageIcon(this.getClass().getResource("/banque2.jpg"));
+        ImageIcon icon = new ImageIcon(this.getClass().getResource("/static/images/banque2.jpg"));
         JLabel monlabel=new JLabel("Numéro compte:" + this.compte.getNumero()+ "   Titulaire du compte: " +
                 this.compte.getNom() + "        Téléphone :" + this.compte.getNumeroTel(), icon, JLabel.CENTER );
         monlabel.setVerticalTextPosition(JLabel.BOTTOM);
@@ -119,6 +119,7 @@ public class Guichet_Auto {
     private void obtenirSoldeCourant() {
         this.setSoldeEcran( compte.getSolde() );
     }
+
     private double getMontant() throws ParseException {
         String montant = this.montantEcran.getText();
         if ( !montant.matches( "\\d{0,7},\\d{0,2}") )

@@ -12,6 +12,7 @@
     <hr>
     <div class="row">
         <div class="col-md-6">
+
             <ul class="list-group">
                 <li class="list-group-item"><p th:text="'Nom : ' + ${nom}">Nom</p></li>
                 <li class="list-group-item"><p th:text="'Numéro de compte : ' + ${numero}">Numero de compte</p></li>
@@ -20,13 +21,14 @@
                 <li class="list-group-item"><p th:text="'Solde du compte : ' + ${solde}">Solde</p></li>
             </ul>
         </div>
+        <img th:src="@{/images/banque2.jpg}"/>
         <div class="col-md-6 container">
             <form method="POST" action="#" th:action="@{/operation}" th:object="${guichet}">
                 <div class="form-group col-md-6 mx-auto text-center">
                     <label th:for="montant">Montant du depot</label>
                     <input type="number" class="form-control"
                            id="montant" name="montant"
-                            min="10" max="10000" step="10"/>
+                            min="10" max="10000" step="10" required/>
                 </div>
                 <div class="row col-md-6 mx-auto">
                     <button type="submit" class="btn btn-primary mx-auto"
