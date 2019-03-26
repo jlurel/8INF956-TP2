@@ -14,7 +14,7 @@ public class IndexController {
 
     public IndexController() {
         ApplicationContext applicationContext =
-                new FileSystemXmlApplicationContext("classpath:web/client-beans.xml");
+                new FileSystemXmlApplicationContext("classpath:web/guichet.xml");
         guichet = (Guichet) applicationContext.getBean("guichet");
     }
 

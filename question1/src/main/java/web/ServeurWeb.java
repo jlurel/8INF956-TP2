@@ -6,7 +6,7 @@ public class ServeurWeb {
 
     public static void main(String[] args) {
         // static Logger log = Logger.getLogger(MyClass.class);
-        new FileSystemXmlApplicationContext( "classpath:web/httpInvoker-servlet.xml" );
+        new FileSystemXmlApplicationContext( "classpath:web/ServeurWeb.xml" );
 
     }
 }

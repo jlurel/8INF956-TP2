@@ -5,6 +5,12 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
         http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 
+    <display-name>Application</display-name>
+
+    <welcome-file-list>
+        <welcome-file>templates/index.html</welcome-file>
+    </welcome-file-list>
+
     <servlet>
         <servlet-name>httpInvoker</servlet-name>
         <servlet-class>org.springframework.web.context.support.HttpRequestHandlerServlet</servlet-class>
