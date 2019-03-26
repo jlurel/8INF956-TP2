@@ -49,3 +49,11 @@ g! start 6
 L'application se lance avec le service de dictionnaire français activé. Pour activer le service de dictionnaire anglais, il faut cliquer sur *Services de dictionnaire > Anglais*.
 
 ![Question 2](./Screenshot%20question2.png)
+
+### Question 3
+
+Nous avons décidé pour cette question d'appliquer le framework SpringMVC sur un exemple simple d'une application. Il s'agit d'une application web génératrice de blagues. 
+Trois fonctionnalités sont disponibles : 
+- Génération d'une blague aléatoire
+- Consultation de toutes les blagues disponibles dans la base de données (MySQL)
+- Création d'une nouvelle blague
