@@ -1,6 +1,6 @@
 # 8INF956 - TP 2
 ## Contributeurs
-- * [Fadoua Hamouachy](https://github.com/fhy01)
+* [Fadoua Hamouachy](https://github.com/fhy01)
 
 ## Question 1
 
