@@ -1,8 +1,10 @@
 # 8INF956 - TP 2
+## Contributeurs
+- * [Fadoua Hamouachy](https://github.com/fhy01)
 
 ## Question 1
 
-Pour réaliser la nouvelle exigence demandée par le directeur, c'est-à-dire que la même application soit accessible via l’Internet, et éviter de modifier le code existant, nous avons décidé d'implémenter l'architecture MVC et le remoting proposés par le **Spring framework**.
+Pour réaliser la nouvelle exigence demandée par le directeur, c'est-à-dire que la même application soit accessible via l’Internet, et éviter de modifier le code existant, nous avons décidé d'implémenter l'architecture MVC et le remoting proposés par le **Spring framework**.
 
 L'architecture MVC va nous permettre de réutiliser le code existant sans le modifier. Elle est mise en place avec **Spring MVC**. 
 Le modèle implémente l'interface Compte utilisée par l'application locale et l'application RMI.
@@ -50,7 +52,7 @@ L'application se lance avec le service de dictionnaire français activé. Pour a
 
 ![Question 2](screenshots/Screenshot%20question2.png)
 
-### Question 3
+## Question 3
 
 Nous avons décidé pour cette question d'appliquer le framework SpringMVC sur un exemple simple d'une application. Il s'agit d'une application web génératrice de blagues. 
 Trois fonctionnalités sont disponibles : 
