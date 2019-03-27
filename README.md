@@ -44,11 +44,11 @@ g! start 5
 g! start 6
 ```
 
-![Felix](./image-20190326013059702.png)
+![Felix](screenshots/image-20190326013059702.png)
 
 L'application se lance avec le service de dictionnaire français activé. Pour activer le service de dictionnaire anglais, il faut cliquer sur *Services de dictionnaire > Anglais*.
 
-![Question 2](./Screenshot%20question2.png)
+![Question 2](screenshots/Screenshot%20question2.png)
 
 ### Question 3
 
